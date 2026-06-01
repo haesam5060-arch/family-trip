@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>해피하린의 우리 가족 여행 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Gowun+Dodum&family=Caveat:wght@500;700&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff5f3;
+  --bg2:#fff;
+  --ink:#4a3838;
+  --ink2:#8b7575;
+  --ink3:#b6a3a3;
+  --pink:#ff9eb2;
+  --pink-l:#ffd9e2;
+  --peach:#ffb072;
+  --peach-l:#ffe1c4;
+  --mint:#7dccae;
+  --mint-l:#cbecdc;
+  --sky:#88c8ee;
+  --sky-l:#d3eaf8;
+  --lav:#c6a8e5;
+  --lav-l:#e8dcf5;
+  --yellow:#ffd84d;
+  --yellow-l:#fff2b8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Gowun Dodum','Gaegu',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.jua{font-family:'Jua',sans-serif}
+.gaegu{font-family:'Gaegu',cursive}
+.cave{font-family:'Caveat',cursive}
+.fred{font-family:'Fredoka',sans-serif}
+
+.book{max-width:860px;margin:0 auto;padding:0}
+
+/* ============ COVER ============ */
+.cover{
+  position:relative;
+  background:linear-gradient(180deg,#ffe2dd 0%,#fff5f3 60%,#fff9d6 100%);
+  padding:48px 36px 64px;
+  text-align:center;
+  overflow:hidden;
+  border-radius:0 0 40px 40px;
+}
+.cover .brand{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border-radius:30px;padding:8px 18px;
+  box-shadow:0 4px 12px rgba(255,150,160,0.15);
+  font-family:'Jua';font-size:14px;color:var(--pink);
+  margin-bottom:36px;
+}
+.cover .brand .heart{color:#ff5a7a;animation:bp 1.4s infinite}
+@keyframes bp{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.cover h1{
+  font-family:'Jua',sans-serif;
+  font-size:52px;
+  line-height:1.18;
+  color:var(--ink);
+  margin-bottom:18px;
+  letter-spacing:-0.02em;
+}
+.cover h1 .pop{color:var(--pink);position:relative;display:inline-block}
+.cover h1 .pop2{color:var(--mint)}
+.cover h1 .pop3{color:var(--peach)}
+.cover .sub{
+  font-family:'Gaegu';font-size:22px;color:var(--ink2);
+  margin-bottom:8px;
+}
+.cover .sub b{color:var(--ink);font-weight:700}
+.cover .who{font-family:'Gaegu';font-size:18px;color:var(--ink2);margin-bottom:36px}
+
+/* cover illustration (SVG family + scenery) */
+.cover .scene{margin:8px 0 32px}
+.cover .scene svg{width:min(92%,460px);height:auto}
+
+.cover .stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.cover .stat{
+  background:#fff;border-radius:22px;padding:14px 22px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  min-width:96px;
+}
+.cover .stat .ic{font-size:24px;margin-bottom:4px}
+.cover .stat .n{font-family:'Jua';font-size:28px;color:var(--ink);line-height:1}
+.cover .stat .l{font-family:'Gaegu';font-size:14px;color:var(--ink2);margin-top:2px}
+
+/* decorative bits */
+.deco{position:absolute;pointer-events:none}
+.deco.d1{top:24px;left:24px;font-size:24px}
+.deco.d2{top:40px;right:30px;font-size:22px;animation:fl 3s ease-in-out infinite}
+.deco.d3{bottom:120px;left:30px;font-size:20px;animation:fl 2.6s ease-in-out infinite 0.3s}
+.deco.d4{bottom:160px;right:36px;font-size:24px;animation:fl 3.2s ease-in-out infinite 0.6s}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(8deg)}}
+
+/* ============ SECTION ============ */
+.sec{padding:48px 28px 24px}
+.sec-h{
+  text-align:center;
+  margin-bottom:32px;
+}
+.sec-h .cave{font-family:'Caveat';font-size:22px;color:var(--pink);font-weight:700;display:block;margin-bottom:4px}
+.sec-h h2{font-family:'Jua';font-size:30px;color:var(--ink);letter-spacing:-0.01em}
+.sec-h h2 .emo{margin-right:8px}
+
+/* ============ OVERVIEW ============ */
+.ov-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.ov{
+  background:#fff;border-radius:24px;padding:22px 24px;
+  box-shadow:0 6px 20px rgba(255,150,160,0.10);
+  display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center;
+  border:2px solid transparent;
+  transition:transform 0.2s;
+}
+.ov:hover{transform:translateY(-2px)}
+.ov.d1{border-color:var(--pink-l)}
+.ov.d2{border-color:var(--peach-l)}
+.ov.d3{border-color:var(--mint-l)}
+.ov .badge{
+  width:64px;height:64px;border-radius:20px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Jua';font-size:32px;color:#fff;
+}
+.ov.d1 .badge{background:linear-gradient(135deg,#ff9eb2,#ffb6c5)}
+.ov.d2 .badge{background:linear-gradient(135deg,#ffb072,#ffc99a)}
+.ov.d3 .badge{background:linear-gradient(135deg,#7dccae,#a3ddc6)}
+.ov .body h3{font-family:'Jua';font-size:19px;color:var(--ink);margin-bottom:4px}
+.ov .body .stay-tag{
+  display:inline-block;font-family:'Gaegu';font-size:14px;
+  background:#fff7d9;color:#a87000;padding:3px 12px;border-radius:20px;
+  margin-top:6px;
+}
+.ov .body p{font-size:13.5px;color:var(--ink2);line-height:1.6;margin-top:4px}
+.ov .body p b{color:var(--ink)}
+
+/* ============ DAY ============ */
+.day{padding:36px 24px;margin:0 14px 24px;border-radius:32px;position:relative;overflow:hidden}
+.day.d1{background:linear-gradient(180deg,#ffe2e8,#fff5f3 60%)}
+.day.d2{background:linear-gradient(180deg,#ffe6cf,#fff5f3 60%)}
+.day.d3{background:linear-gradient(180deg,#d8efe1,#fff5f3 60%)}
+
+.day-hd{text-align:center;margin-bottom:28px}
+.day-hd .chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff;border-radius:30px;padding:8px 18px;
+  font-family:'Jua';font-size:14px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.04);
+  margin-bottom:14px;
+}
+.day.d1 .day-hd .chip{color:#e74e6f}
+.day.d2 .day-hd .chip{color:#d4751a}
+.day.d3 .day-hd .chip{color:#2c8e6a}
+.day-hd .big-emo{font-size:54px;margin-bottom:10px;display:block;line-height:1}
+.day-hd h2{font-family:'Jua';font-size:30px;color:var(--ink);line-height:1.2;margin-bottom:10px;letter-spacing:-0.01em}
+.day-hd .when{font-family:'Gaegu';font-size:17px;color:var(--ink2)}
+.day-hd .lead{
+  font-family:'Gowun Dodum';
+  margin-top:18px;padding:18px 22px;
+  background:rgba(255,255,255,0.6);
+  border-radius:20px;
+  font-size:14.5px;line-height:1.75;color:var(--ink);
+  max-width:640px;margin-left:auto;margin-right:auto;
+}
+.day-hd .lead b{font-weight:700}
+.day.d1 .day-hd .lead b{color:#e74e6f}
+.day.d2 .day-hd .lead b{color:#d4751a}
+.day.d3 .day-hd .lead b{color:#2c8e6a}
+
+/* Timeline cards */
+.tl{display:flex;flex-direction:column;gap:12px}
+.tlc{
+  background:#fff;border-radius:22px;padding:16px 20px;
+  display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:start;
+  box-shadow:0 3px 10px rgba(0,0,0,0.04);
+  position:relative;
+}
+.tlc.hero{padding:18px 22px}
+.day.d1 .tlc.hero{background:#fff5f7;border:2px dashed #ffb6c5}
+.day.d2 .tlc.hero{background:#fff7ec;border:2px dashed #ffc99a}
+.day.d3 .tlc.hero{background:#f0faf4;border:2px dashed #a3ddc6}
+.tlc .time{
+  font-family:'Fredoka';font-size:18px;font-weight:600;
+  color:var(--ink);text-align:center;line-height:1.1;
+  padding-top:2px;
+}
+.tlc .time small{display:block;font-family:'Gaegu';font-size:12px;color:var(--ink3);font-weight:400;margin-top:2px}
+.tlc.meal .time{color:#d4751a}
+.day.d1 .tlc.hero .time{color:#e74e6f}
+.day.d2 .tlc.hero .time{color:#d4751a}
+.day.d3 .tlc.hero .time{color:#2c8e6a}
+.tlc .ti{font-family:'Jua';font-size:16.5px;color:var(--ink);margin-bottom:3px;letter-spacing:-0.01em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tlc .ti .ic{font-size:18px}
+.tlc .ti .tag{
+  font-family:'Gaegu';font-size:12px;font-weight:700;
+  padding:2px 10px;border-radius:12px;
+}
+.tlc.meal .ti .tag{background:#fff2c8;color:#a87000}
+.tlc.hero .ti .tag{background:#ffe2e8;color:#e74e6f}
+.day.d2 .tlc.hero .ti .tag{background:#ffe6cf;color:#d4751a}
+.day.d3 .tlc.hero .ti .tag{background:#d8efe1;color:#2c8e6a}
+.tlc .de{font-size:13.5px;color:var(--ink2);line-height:1.65}
+.tlc .de b{color:var(--ink);font-weight:700}
+.tlc .de .em{color:#e74e6f;font-weight:700}
+
+/* Highlight box (별표 박스) */
+.hl{
+  background:#fff;border-radius:24px;padding:24px;
+  margin-top:24px;
+  border:2px dashed;
+}
+.day.d1 .hl{border-color:#ffb6c5}
+.day.d2 .hl{border-color:#ffc99a}
+.day.d3 .hl{border-color:#a3ddc6}
+.hl .h4{font-family:'Jua';font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.hl ul{list-style:none;padding:0}
+.hl li{
+  padding:10px 12px 10px 36px;position:relative;font-size:13.5px;
+  color:var(--ink);line-height:1.7;
+  border-bottom:1px dashed #ffe0e0;
+}
+.hl li:last-child{border-bottom:0}
+.hl li::before{
+  content:"⭐";position:absolute;left:8px;top:9px;
+  font-size:15px;
+}
+.hl li b{font-weight:700}
+.hl li .warn{color:#e74e6f;font-weight:700}
+.hl .note{
+  margin-top:12px;padding:12px 14px;
+  background:#fff8e7;border-radius:14px;
+  font-family:'Gaegu';font-size:13.5px;color:#7a5b1d;line-height:1.6;
+}
+.hl .note::before{content:"💡 ";font-family:initial}
+
+/* Practical info row */
+.prac{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.prac .b{
+  background:#fff;border-radius:18px;padding:14px 16px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.03);
+}
+.prac .b .l{font-family:'Jua';font-size:13px;color:var(--ink2);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.prac .b .v{font-size:13px;color:var(--ink);line-height:1.6}
+.prac .b .v b{font-weight:700;color:#e74e6f}
+.day.d2 .prac .b .v b{color:#d4751a}
+.day.d3 .prac .b .v b{color:#2c8e6a}
+
+/* CTA */
+.cta{margin-top:20px;text-align:center}
+.cta a{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border-radius:30px;padding:12px 22px;
+  font-family:'Jua';font-size:14px;text-decoration:none;
+  color:var(--ink);
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  transition:transform 0.15s;
+}
+.cta a:hover{transform:translateY(-2px)}
+.day.d1 .cta a{color:#e74e6f}
+.day.d2 .cta a{color:#d4751a}
+.day.d3 .cta a{color:#2c8e6a}
+.cta a .arr{font-family:'Caveat';font-size:20px}
+
+/* ============ STAY CARDS ============ */
+.stays{padding:24px 14px}
+.stay-c{
+  background:#fff;border-radius:28px;padding:24px;
+  margin-bottom:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  position:relative;overflow:hidden;
+}
+.stay-c::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+}
+.stay-c.s1::before{background:linear-gradient(90deg,#ff9eb2,#ffd9e2,#ff9eb2)}
+.stay-c.s2::before{background:linear-gradient(90deg,#7dccae,#cbecdc,#7dccae)}
+.stay-c .top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.stay-c .top .emo{font-size:42px;line-height:1}
+.stay-c .top .name{flex:1;min-width:200px}
+.stay-c .top .tg{
+  font-family:'Gaegu';font-size:13px;font-weight:700;
+  padding:3px 12px;border-radius:14px;display:inline-block;margin-bottom:6px;
+}
+.stay-c.s1 .top .tg{background:#ffe2e8;color:#e74e6f}
+.stay-c.s2 .top .tg{background:#d8efe1;color:#2c8e6a}
+.stay-c .top h3{font-family:'Jua';font-size:22px;color:var(--ink);margin-bottom:4px}
+.stay-c .top .sub{font-family:'Gaegu';font-size:14px;color:var(--ink2)}
+.stay-c .lead{font-size:14px;color:var(--ink);line-height:1.75;margin-bottom:14px}
+.stay-c .lead b{font-weight:700}
+.stay-c .feat{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.stay-c .feat .f{
+  background:#fff7f7;border-radius:14px;padding:10px 12px;
+  font-size:13px;color:var(--ink);line-height:1.55;
+}
+.stay-c.s2 .feat .f{background:#f3faf6}
+.stay-c .feat .f .ic{margin-right:4px}
+.stay-c .feat .f b{font-weight:700}
+.stay-c .warn-box{
+  margin-top:14px;background:#fff0f3;border-radius:14px;padding:12px 14px;
+  border-left:4px solid #ff5a7a;
+  font-size:13px;color:var(--ink);line-height:1.65;
+}
+.stay-c .warn-box .wt{font-family:'Jua';font-size:13px;color:#e74e6f;margin-bottom:4px}
+
+/* ============ TIPS ============ */
+.tips{padding:36px 14px}
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tip{
+  background:#fff;border-radius:22px;padding:20px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.04);
+}
+.tip h3{font-family:'Jua';font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px;color:var(--ink)}
+.tip ul{list-style:none;padding:0}
+.tip li{
+  padding:8px 0 8px 24px;position:relative;font-size:13px;color:var(--ink);
+  line-height:1.6;border-bottom:1px dashed #f0e0e0;
+}
+.tip li:last-child{border-bottom:0}
+.tip li::before{content:"✓";position:absolute;left:4px;top:8px;color:var(--mint);font-weight:700}
+.tip li b{font-weight:700}
+.tip li .warn{color:#e74e6f;font-weight:700}
+.tip.full{grid-column:1/-1}
+
+.park-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.park-row a{
+  flex:1;min-width:180px;
+  background:#fff8e7;border-radius:16px;padding:12px 14px;
+  text-decoration:none;color:var(--ink);
+  font-size:13px;line-height:1.4;
+  border:2px solid #fff2c8;
+  transition:all 0.15s;
+}
+.park-row a:hover{transform:translateY(-2px);border-color:#ffd84d}
+.park-row a .pl{display:block;font-family:'Gaegu';font-size:12px;color:#a87000;margin-bottom:2px}
+.park-row a .pn{font-family:'Jua';font-size:14px}
+
+/* ============ FOOTER ============ */
+.foot{
+  background:linear-gradient(180deg,#fff5f3,#ffe2dd);
+  border-radius:40px 40px 0 0;
+  padding:48px 28px;
+  text-align:center;
+  margin-top:36px;
+}
+.foot .big{font-family:'Jua';font-size:28px;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.foot .big .em{color:#e74e6f}
+.foot .sig{font-family:'Caveat';font-size:26px;color:var(--pink);margin-top:18px;font-weight:700}
+.foot .sig .heart{color:#ff5a7a}
+.foot .small{font-family:'Gaegu';font-size:13px;color:var(--ink3);margin-top:20px;line-height:1.6}
+
+/* ============ PHOTO FRAME (스크랩북 사진) ============ */
+.photo{
+  position:relative;width:100%;border-radius:20px;overflow:hidden;
+  background:#f3ece8;
+  box-shadow:0 8px 22px rgba(120,80,80,0.16);
+}
+.photo::after{ /* 살짝 광택 */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,255,255,0.22),rgba(255,255,255,0) 40%);
+}
+.photo.tall{aspect-ratio:4/3}
+.photo.band{aspect-ratio:21/9}
+.photo .photo-art{position:absolute;inset:0;width:100%;height:100%}
+.photo .photo-art svg{width:100%;height:100%;display:block}
+.photo .photo-real{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  z-index:2;background:#f3ece8;
+}
+.photo .photo-cap{
+  position:absolute;left:12px;bottom:10px;z-index:3;
+  font-family:'Gaegu';font-size:13px;color:#fff;font-weight:700;
+  background:rgba(74,56,56,0.55);backdrop-filter:blur(2px);
+  padding:4px 12px;border-radius:14px;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.photo .washi{ /* 마스킹테이프 */
+  position:absolute;top:6px;z-index:4;width:58px;height:18px;
+  background:rgba(255,216,77,0.55);transform:rotate(-4deg);
+  border-radius:2px;box-shadow:0 2px 5px rgba(0,0,0,0.06);
+}
+.photo .washi.l{left:18px}
+.photo .washi.r{right:18px;transform:rotate(4deg);background:rgba(255,158,178,0.5)}
+
+/* day-hd 안의 배너 사진 */
+.day-hd .photo{margin:0 auto 4px;max-width:560px}
+/* stay card 안의 사진 */
+.stay-c .photo{margin:4px 0 16px}
+
+/* ============ 경원재 5성급 럭셔리 ============ */
+.stay-c.s1{
+  background:linear-gradient(180deg,#fffaf4 0%,#fff 60%);
+  border:2px solid #f2e3c4;
+}
+.stay-c.s1::before{background:linear-gradient(90deg,#c9a24b,#f3dca0,#c9a24b)}
+.lux-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:2px 0 6px}
+.lux-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Jua';font-size:12.5px;color:#fff;
+  background:linear-gradient(135deg,#b8862f,#e6c067);
+  padding:5px 13px;border-radius:16px;letter-spacing:0.01em;
+  box-shadow:0 3px 9px rgba(184,134,47,0.32);
+}
+.lux-badge .st{letter-spacing:1px}
+.lux-op{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'Gaegu';font-size:12.5px;font-weight:700;color:#8a6a2a;
+  background:#fbf2dd;border:1px solid #ecdcb3;
+  padding:4px 11px;border-radius:14px;
+}
+.lux-score{
+  display:inline-flex;align-items:baseline;gap:4px;
+  font-family:'Gaegu';font-size:12.5px;color:#7a5b1d;
+}
+.lux-score b{font-family:'Jua';font-size:16px;color:#c9a24b}
+.lux-badge.green{background:linear-gradient(135deg,#2c8e6a,#5cc39a);box-shadow:0 3px 9px rgba(44,142,106,0.3)}
+.lux-op.green{color:#2c7a5c;background:#e6f5ee;border-color:#bfe5d4}
+.stay-c.s2{background:linear-gradient(180deg,#f4fbf7 0%,#fff 60%);border:2px solid #cfeadd}
+.stay-c.s2 .feat .f.hero-f{grid-column:1/-1;background:linear-gradient(120deg,#e6f5ee,#f3fbf7);border:1px dashed #8fd0b3}
+.stay-c.s2 .feat .f.hero-f b{color:#2c7a5c}
+.stay-c.s1 .top .tg{background:linear-gradient(135deg,#b8862f,#e6c067);color:#fff}
+.stay-c.s1 .lead b{color:#a8791f}
+.stay-c.s1 .feat .f{background:#fdf7ec;border:1px solid #f2e8d4}
+.stay-c.s1 .feat .f.hero-f{
+  grid-column:1/-1;background:linear-gradient(120deg,#fbf1d9,#fff7e8);
+  border:1px dashed #d9b96a;
+}
+.stay-c.s1 .feat .f.hero-f b{color:#a8791f}
+
+/* MOBILE */
+@media (max-width:600px){
+  .day-hd .photo{max-width:none}
+  .cover{padding:36px 22px 48px}
+  .cover h1{font-size:38px}
+  .cover .sub{font-size:18px}
+  .sec{padding:36px 18px 18px}
+  .sec-h h2{font-size:24px}
+  .day{padding:28px 18px;margin:0 10px 20px;border-radius:24px}
+  .day-hd h2{font-size:24px}
+  .day-hd .big-emo{font-size:46px}
+  .tlc{padding:14px 16px;grid-template-columns:52px 1fr;gap:10px}
+  .tlc .ti{font-size:15px}
+  .prac{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr}
+  .stays{padding:18px 10px}
+  .stay-c{padding:20px}
+  .stay-c .feat{grid-template-columns:1fr}
+  .foot .big{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <!-- ============ COVER ============ -->
+  <section class="cover">
+    <span class="deco d1">🌸</span>
+    <span class="deco d2">✨</span>
+    <span class="deco d3">☁️</span>
+    <span class="deco d4">🌷</span>
+
+    <div class="brand">
+      <span class="heart">💝</span>
+      <span>해피하린</span>
+      <span style="color:#ffd84d">✦</span>
+      <span class="fred" style="color:var(--peach);font-size:13px">HAPPY HARIN</span>
+    </div>
+
+    <h1>우리 가족 <span class="pop">2박 3일</span><br><span class="pop2">신나는</span> <span class="pop3">여행</span> 🚗💨</h1>
+
+    <div class="sub"><b>6월 8일 (월) ~ 10일 (수)</b></div>
+    <div class="who">엄마 💕 아빠 💛 딸 🌸</div>
+
+    <!-- Family + scenery illustration -->
+    <div class="scene">
+      <svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" aria-label="가족 여행 일러스트">
+        <!-- sky -->
+        <ellipse cx="380" cy="40" rx="30" ry="20" fill="#fff" opacity="0.8"/>
+        <ellipse cx="90" cy="50" rx="34" ry="22" fill="#fff" opacity="0.8"/>
+        <circle cx="410" cy="35" r="14" fill="#ffd84d"/>
+        <!-- mountains -->
+        <path d="M0,150 L80,90 L130,130 L200,80 L260,140 L340,90 L460,140 L460,200 L0,200 Z" fill="#ffd9e2"/>
+        <path d="M0,160 L60,120 L120,150 L190,110 L260,160 L320,120 L460,160 L460,200 L0,200 Z" fill="#ffc1cd"/>
+        <!-- ground -->
+        <rect x="0" y="170" width="460" height="30" fill="#a3ddc6"/>
+        <!-- hanok -->
+        <g transform="translate(60,135)">
+          <rect x="0" y="14" width="60" height="22" fill="#fff5e6" stroke="#7a4a2a" stroke-width="1.5"/>
+          <path d="M-8,14 L30,-2 L68,14 Z" fill="#7a4a2a"/>
+          <rect x="22" y="22" width="14" height="14" fill="#7a4a2a"/>
+          <line x1="30" y1="22" x2="30" y2="36" stroke="#fff5e6" stroke-width="1"/>
+        </g>
+        <!-- family (3 figures) -->
+        <g transform="translate(200,120)">
+          <!-- Dad -->
+          <circle cx="0" cy="0" r="11" fill="#ffd9b8"/>
+          <rect x="-9" y="9" width="18" height="28" rx="4" fill="#88c8ee"/>
+          <rect x="-7" y="35" width="5" height="14" fill="#3a3a3a"/>
+          <rect x="2" y="35" width="5" height="14" fill="#3a3a3a"/>
+          <circle cx="-3" cy="-2" r="1" fill="#3a3a3a"/>
+          <circle cx="3" cy="-2" r="1" fill="#3a3a3a"/>
+          <path d="M-3,3 Q0,5 3,3" stroke="#3a3a3a" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(228,124)">
+          <!-- Mom -->
+          <circle cx="0" cy="0" r="10" fill="#ffd9b8"/>
+          <path d="M-9,4 Q-12,-2 -9,-8 Q0,-14 9,-8 Q12,-2 9,4 Z" fill="#5a3030"/>
+          <path d="M-10,8 L-12,28 L12,28 L10,8 Z" fill="#ff9eb2"/>
+          <rect x="-5" y="28" width="4" height="18" fill="#ffd9b8"/>
+          <rect x="1" y="28" width="4" height="18" fill="#ffd9b8"/>
+          <circle cx="-3" cy="-1" r="1" fill="#3a3a3a"/>
+          <circle cx="3" cy="-1" r="1" fill="#3a3a3a"/>
+          <path d="M-2,4 Q0,5 2,4" stroke="#3a3a3a" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(252,134)">
+          <!-- Daughter (smaller) -->
+          <circle cx="0" cy="0" r="8" fill="#ffd9b8"/>
+          <path d="M-7,2 Q-9,-4 -6,-8 Q0,-11 6,-8 Q9,-4 7,2 Z" fill="#3a3030"/>
+          <circle cx="-7" cy="-3" r="2.5" fill="#3a3030"/>
+          <circle cx="7" cy="-3" r="2.5" fill="#3a3030"/>
+          <path d="M-7,8 L-8,28 L8,28 L7,8 Z" fill="#ffd84d"/>
+          <rect x="-4" y="28" width="3" height="14" fill="#ffd9b8"/>
+          <rect x="1" y="28" width="3" height="14" fill="#ffd9b8"/>
+          <circle cx="-2" cy="-1" r="0.9" fill="#3a3a3a"/>
+          <circle cx="2" cy="-1" r="0.9" fill="#3a3a3a"/>
+          <path d="M-2,3 Q0,5 2,3" stroke="#3a3a3a" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <text x="-2" y="-10" font-size="9" fill="#ff5a7a">♥</text>
+        </g>
+        <!-- car -->
+        <g transform="translate(330,150)">
+          <rect x="0" y="0" width="50" height="18" rx="6" fill="#88c8ee"/>
+          <rect x="6" y="-10" width="38" height="14" rx="5" fill="#a5d8ff"/>
+          <circle cx="12" cy="20" r="5" fill="#3a3a3a"/>
+          <circle cx="38" cy="20" r="5" fill="#3a3a3a"/>
+          <circle cx="12" cy="20" r="2" fill="#fff"/>
+          <circle cx="38" cy="20" r="2" fill="#fff"/>
+        </g>
+        <!-- flowers on grass -->
+        <g fill="#ff5a7a"><circle cx="20" cy="186" r="2"/><circle cx="160" cy="184" r="2"/><circle cx="290" cy="186" r="2"/><circle cx="430" cy="184" r="2"/></g>
+        <g fill="#ffd84d"><circle cx="50" cy="188" r="1.8"/><circle cx="120" cy="186" r="1.8"/><circle cx="400" cy="188" r="1.8"/></g>
+      </svg>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="ic">📅</div><div class="n">3</div><div class="l">일</div></div>
+      <div class="stat"><div class="ic">🌙</div><div class="n">2</div><div class="l">밤</div></div>
+      <div class="stat"><div class="ic">📍</div><div class="n">4</div><div class="l">지역</div></div>
+      <div class="stat"><div class="ic">💝</div><div class="n">3</div><div class="l">가족</div></div>
+    </div>
+  </section>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="sec">
+    <div class="sec-h">
+      <span class="cave">Here we go!</span>
+      <h2><span class="emo">🗺️</span>여행 한눈에</h2>
+    </div>
+    <div class="ov-grid">
+      <div class="ov d1">
+        <div class="badge">I</div>
+        <div class="body">
+          <h3>🏯 바다 옆 한옥에서 첫 밤</h3>
+          <p>송도 센트럴파크 옆 <b>국내 유일 5성급 한옥호텔 경원재</b>에서 1박! 쇼핑하고 저녁 먹고 달빛 문보트 🌙</p>
+          <span class="stay-tag">🛏️ 경원재 by 워커힐 · 5성급 · 1박</span>
+        </div>
+      </div>
+      <div class="ov d2">
+        <div class="badge">II</div>
+        <div class="body">
+          <h3>🌆 인사동 골목 모험</h3>
+          <p>G타워 전망대 ✨ → 서울 인사동에서 도자기·기념품 사고 익선동 한옥 골목 산책</p>
+          <span class="stay-tag">🛏️ 안토 서울 · 한화 하이엔드 리조트 · 1박 🏊</span>
+        </div>
+      </div>
+      <div class="ov d3">
+        <div class="badge">III</div>
+        <div class="body">
+          <h3>👘 한복 입고 경복궁, 엽전 들고 통인시장</h3>
+          <p><b>한복</b> 입고 경복궁 🏯 → 영추문 → <b>엽전</b> 들고 통인시장에서 도시락 만들기 🍱</p>
+          <span class="stay-tag">🏠 오후에 수원 집으로</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DAY 1 ============ -->
+  <section class="day d1">
+    <div class="day-hd">
+      <div class="chip">🌸 DAY ONE · 6월 8일 월요일</div>
+      <span class="big-emo">🏯🌙</span>
+      <h2>바다 옆 한옥에서<br>쉬어가는 첫날</h2>
+      <div class="when">📍 송도 · 인천</div>
+      <div class="photo band">
+        <span class="washi l"></span><span class="washi r"></span>
+        <img class="photo-real" onerror="this.style.display='none'" alt="송도 센트럴파크 야경" loading="lazy" referrerpolicy="no-referrer" src="https://tong.visitkorea.or.kr/cms/resource/15/3025915_image2_1.JPG"><!-- ← 실제 사진을 넣으려면 이 src="" 안에 사진 주소를 붙여넣으세요 -->
+        <div class="photo-art"><svg viewBox="0 0 420 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="d1s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2350"/><stop offset=".6" stop-color="#5a3f6e"/><stop offset="1" stop-color="#8a5a72"/></linearGradient></defs><rect width="420" height="180" fill="url(#d1s)"/><circle cx="350" cy="40" r="22" fill="#fff3c4"/><circle cx="343" cy="34" r="18" fill="#5a3f6e" opacity=".5"/><g fill="#fff"><circle cx="40" cy="30" r="1.4"/><circle cx="90" cy="55" r="1"/><circle cx="150" cy="25" r="1.3"/><circle cx="220" cy="45" r="1"/><circle cx="280" cy="28" r="1.2"/><circle cx="120" cy="80" r="1"/></g><g fill="#3b3160"><rect x="10" y="70" width="22" height="70"/><rect x="36" y="55" width="16" height="85"/><rect x="250" y="60" width="20" height="80"/><rect x="274" y="80" width="14" height="60"/><rect x="380" y="66" width="22" height="74"/></g><g fill="#ffd97a" opacity=".85"><rect x="16" y="78" width="4" height="5"/><rect x="24" y="90" width="4" height="5"/><rect x="40" y="64" width="3" height="4"/><rect x="44" y="78" width="3" height="4"/><rect x="256" y="70" width="3" height="4"/><rect x="262" y="86" width="3" height="4"/><rect x="386" y="76" width="4" height="5"/></g><path d="M70,128 Q80,108 130,106 Q180,108 190,128 Z" fill="#241d3e"/><rect x="86" y="126" width="88" height="14" fill="#2e2650"/><g fill="#ffce6b"><rect x="100" y="129" width="8" height="8"/><rect x="124" y="129" width="8" height="8"/><rect x="148" y="129" width="8" height="8"/></g><rect x="0" y="140" width="420" height="40" fill="#39507a"/><rect x="0" y="140" width="420" height="40" fill="#2f4468" opacity=".5"/><g stroke="#fff3c4" stroke-width="2" opacity=".5"><line x1="340" y1="150" x2="356" y2="150"/><line x1="345" y1="158" x2="358" y2="158"/><line x1="342" y1="166" x2="354" y2="166"/></g><g transform="translate(180,150)"><path d="M-22,6 Q0,18 22,6 L18,12 Q0,20 -18,12 Z" fill="#ffd97a"/><circle cx="0" cy="0" r="9" fill="#ffe9a8"/><rect x="-1.5" y="-16" width="3" height="14" fill="#fff"/><path d="M1.5,-16 L14,-11 L1.5,-7 Z" fill="#ff9eb2"/></g></svg></div>
+        <div class="photo-cap">🌆 송도 센트럴파크</div>
+      </div>
+      <div class="lead">송도 센트럴파크 한가운데 자리 잡은 <b>경원재</b>는 한옥 호텔이면서 작은 마을 같아! 짐 풀고 가볍게 쇼핑 다녀온 다음, 저녁부터는 차 두고 공원길을 걸어. 맛있는 저녁 한 끼와 <b>달빛 문보트</b>, 그리고 한옥에서의 첫 밤 ✨</div>
+    </div>
+
+    <div class="tl">
+      <div class="tlc"><div class="time">15:00<small>오후</small></div><div class="c"><div class="ti"><span class="ic">🛎️</span>경원재 by 워커힐 체크인</div><div class="de">한옥 객실에 짐 풀기 · 한옥마을 자체가 숙소 바로 옆이라 분위기 그대로 느낄 수 있어요</div></div></div>
+      <div class="tlc"><div class="time">15:40</div><div class="c"><div class="ti"><span class="ic">🛍️</span>송현아 · 트리플스트리트</div><div class="de">차로 10분 · 현대 프리미엄 아울렛과 노천 쇼핑몰 · 키즈존·디저트 카페로 가벼운 오후</div></div></div>
+      <div class="tlc"><div class="time">18:00</div><div class="c"><div class="ti"><span class="ic">🚗</span>경원재 복귀 · 주차</div><div class="de">저녁부터는 차 두고 공원길 도보 시작!</div></div></div>
+      <div class="tlc hero meal"><div class="time">18:30<small>저녁</small></div><div class="c"><div class="ti"><span class="ic">🍽️</span>저녁 — 두 가지 중 선택! <span class="tag">DINNER</span></div><div class="de"><b>옵션 A · 송도 아트포레</b> — 유럽풍 거리·포토존 📸, <b>JAZZ257</b>(라이브 재즈 다이닝 <span class="em">★4.8</span>)·<b>Pizza257</b>(★4.9). 도보 약 7분<br><b>옵션 B · 몰트하우스</b> — 센트럴파크+한옥 뷰 이탈리안 🍝 (★4.6). 도보 약 3분, 창가석 예약 권장</div></div></div>
+      <div class="tlc hero"><div class="time">20:30</div><div class="c"><div class="ti"><span class="ic">🌙</span>센트럴파크 문보트 <span class="tag">SPECIAL</span></div><div class="de">공원길 산책으로 이동 · 달빛 보트와 한옥 라이팅 야경 ✨ 6월의 시원한 저녁 산책</div></div></div>
+      <div class="tlc"><div class="time">21:30</div><div class="c"><div class="ti"><span class="ic">🌃</span>경원재 복귀</div><div class="de">한옥 중정 야경 · 객실 전통놀이함(윷놀이)으로 마무리</div></div></div>
+    </div>
+
+    <div class="hl">
+      <div class="h4">🏯 경원재에서 꼭 누려요</div>
+      <ul>
+        <li><b>대청마루와 편백나무 욕조</b>에서 한옥 호텔의 본질을 즐기기 🛁</li>
+        <li>객실에 있는 <b>전통놀이함</b>(윷놀이!)으로 가족 한 판 🎲</li>
+        <li><b>한복 대여(유료)</b> 후 한옥마을 중정·누각에서 가족사진 — 밤이 가장 예뻐요 📸</li>
+        <li>이튿날 아침은 'Dining 송'의 <b>한식 반상 조식</b> 🍚</li>
+      </ul>
+      <div class="note">무료 주차 · 전 객실 금연 · 다이슨 드라이어 비치 / 옆 G타워(무료 전망대)는 월 휴무라서 다음 날 아침에 가요!</div>
+    </div>
+
+    <div class="prac">
+      <div class="b"><div class="l">🅿️ 주차</div><div class="v">경원재 <b>무료 주차</b>. 송현아·트리플은 차로 약 2km, 저녁부터는 도보로!</div></div>
+      <div class="b"><div class="l">🚇 교통</div><div class="v">자차 권장 / 대중교통은 인천 1호선 <b>테크노파크역</b>(트리플 도보 650m)</div></div>
+    </div>
+
+    <div class="cta"><a target="_blank" href="https://www.google.com/maps/dir/경원재+바이+워커힐/현대+프리미엄+아울렛+송도/트리플스트리트/송도+아트포레+푸르지오시티/송도+센트럴파크">🗺️ Day 1 구글지도 동선<span class="arr">→</span></a></div>
+  </section>
+
+  <!-- ============ DAY 2 ============ -->
+  <section class="day d2">
+    <div class="day-hd">
+      <div class="chip">🍊 DAY TWO · 6월 9일 화요일</div>
+      <span class="big-emo">🌆🛍️</span>
+      <h2>송도에서 인사동까지<br>옛 풍경 속으로</h2>
+      <div class="when">📍 송도 → 서울 종로 → 강북</div>
+      <div class="photo band">
+        <span class="washi l"></span><span class="washi r"></span>
+        <img class="photo-real" onerror="this.style.display='none'" alt="인사동 익선동 한옥 골목" loading="lazy" referrerpolicy="no-referrer" src="https://english.visitseoul.net/comm/getImage?srvcId=MEDIA&amp;parentSn=67438&amp;fileTy=MEDIA&amp;fileNo=2"><!-- ← 실제 사진을 넣으려면 이 src="" 안에 사진 주소를 붙여넣으세요 -->
+        <div class="photo-art"><svg viewBox="0 0 420 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="d2s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe6cf"/><stop offset="1" stop-color="#fff4e6"/></linearGradient></defs><rect width="420" height="180" fill="url(#d2s)"/><g fill="#b98a5e" opacity=".45"><path d="M0,58 L60,38 L120,58 Z"/><path d="M300,56 L360,36 L420,56 Z"/></g><rect x="0" y="120" width="420" height="60" fill="#e8d9c4"/><polygon points="150,180 270,180 240,120 180,120" fill="#d9c4a8"/><g stroke="#cdb893" stroke-width="1"><line x1="186" y1="132" x2="234" y2="132"/><line x1="180" y1="150" x2="240" y2="150"/><line x1="172" y1="170" x2="248" y2="170"/></g><g transform="translate(20,52)"><rect x="0" y="30" width="120" height="70" fill="#f6ead4" stroke="#caa978" stroke-width="1.5"/><rect x="-8" y="24" width="136" height="10" fill="#6b6f7a"/><path d="M-14,26 Q56,2 126,26 Q56,14 -14,26 Z" fill="#7d808a"/><rect x="12" y="46" width="40" height="54" fill="#9b6a3f"/><g fill="#fff8ec" stroke="#caa978"><rect x="66" y="46" width="44" height="34"/></g><rect x="38" y="34" width="64" height="11" fill="#c0463f"/><text x="70" y="43" font-size="8" fill="#fff" text-anchor="middle" font-family="serif">인사동</text></g><g transform="translate(280,58)"><rect x="0" y="26" width="120" height="64" fill="#f3e4cc" stroke="#caa978" stroke-width="1.5"/><rect x="-8" y="20" width="136" height="10" fill="#6b6f7a"/><path d="M-14,22 Q56,0 126,22 Q56,12 -14,22 Z" fill="#7d808a"/><g fill="#fff8ec" stroke="#caa978"><rect x="16" y="40" width="40" height="46"/><rect x="68" y="40" width="40" height="46"/></g></g><g><line x1="150" y1="40" x2="270" y2="40" stroke="#9b6a3f" stroke-width="1.5"/><g fill="#ff7a8a"><ellipse cx="170" cy="50" rx="7" ry="9"/><ellipse cx="210" cy="50" rx="7" ry="9"/><ellipse cx="250" cy="50" rx="7" ry="9"/></g><g fill="#ffd84d"><rect x="167" y="45" width="6" height="2"/><rect x="207" y="45" width="6" height="2"/><rect x="247" y="45" width="6" height="2"/></g></g><g transform="translate(150,150)" fill="#9a8c7a"><ellipse cx="0" cy="0" rx="8" ry="10"/><rect x="-4" y="-12" width="8" height="6"/></g></svg></div>
+        <div class="photo-cap">🏘️ 익선동·인사동 한옥거리</div>
+      </div>
+      <div class="lead">조식 먹고 한옥 중정 산책 겸 <b>G타워 전망대</b>로 마지막 송도 인사 👋 11시 체크아웃하고 서울로 출발! 종묘에 차 대놓고 <b>인사동·익선동</b>을 도보로 알차게, 청계천 슥. 오후 3시에 북한산 자락의 <b>안토</b>에 체크인해서 신나는 휴식! 🏊</div>
+    </div>
+
+    <div class="tl">
+      <div class="tlc meal"><div class="time">08:30<small>아침</small></div><div class="c"><div class="ti"><span class="ic">🍚</span>경원재 한식 반상 조식 <span class="tag">BREAKFAST</span></div><div class="de">정갈한 한정식 한 상 — 한옥 호텔의 백미!</div></div></div>
+      <div class="tlc"><div class="time">09:30</div><div class="c"><div class="ti"><span class="ic">🚶‍♀️</span>한옥 중정 산책 · 짐 정리</div><div class="de">마지막 한옥 사진 📸, 짐은 미리 차에</div></div></div>
+      <div class="tlc"><div class="time">09:50</div><div class="c"><div class="ti"><span class="ic">🌳</span>G타워로 산책 출발</div><div class="de">경원재에서 도보 8분 · 10시 개관 직전 도착</div></div></div>
+      <div class="tlc hero"><div class="time">10:00</div><div class="c"><div class="ti"><span class="ic">🏙️</span>G타워 33층 무료 전망대 <span class="tag">VIEW</span></div><div class="de">송도와 서해의 파노라마 🌊 · LED 아트 · <b>AI 체험룸</b>(아이가 좋아하는 코너!) · 화요일 개관 OK</div></div></div>
+      <div class="tlc"><div class="time">10:50</div><div class="c"><div class="ti"><span class="ic">🧳</span>경원재 복귀 · 짐 차에 싣기</div></div></div>
+      <div class="tlc"><div class="time">11:00</div><div class="c"><div class="ti"><span class="ic">🚗</span>경원재 체크아웃 · 서울로 출발</div><div class="de">종묘 공영주차장까지 약 1시간</div></div></div>
+      <div class="tlc"><div class="time">12:00</div><div class="c"><div class="ti"><span class="ic">🅿️</span>종묘 공영주차장 도착</div><div class="de">차 대고 도보 시작! 인사동·익선동·청계천 모두 도보권 🚶‍♀️🚶‍♂️🚶</div></div></div>
+      <div class="tlc meal"><div class="time">12:10<small>점심</small></div><div class="c"><div class="ti"><span class="ic">🍱</span>인사동 점심 <span class="tag">LUNCH</span></div><div class="de"><b>SotNaeEum 인사동</b>(솥밥 <span class="em">★4.9</span>) 또는 <b>산유화 한정식</b>(★4.2) · 한정식·솥밥으로 아이도 무난</div></div></div>
+      <div class="tlc hero"><div class="time">13:10</div><div class="c"><div class="ti"><span class="ic">🎨</span>인사동길 · 쌈지길 알차게 <span class="tag">FUN!</span></div><div class="de">전통 공예와 기념품, 한지·도자기·간식 · <b>한지 또는 팔찌 만들기 체험</b> 한 가지 추천 — 아이에게 가장 기억에 남는 시간 💖</div></div></div>
+      <div class="tlc"><div class="time">14:10</div><div class="c"><div class="ti"><span class="ic">🏘️</span>익선동 한옥거리 · 청계천 슥</div><div class="de">쌈지길에서 도보 7분 · 좁은 한옥 골목 사진 한 컷 📸, 청계천 광통교 잠깐</div></div></div>
+      <div class="tlc"><div class="time">14:20</div><div class="c"><div class="ti"><span class="ic">🚙</span>종묘 복귀 · 안토 출발</div><div class="de">강북까지 약 40분</div></div></div>
+      <div class="tlc hero"><div class="time">15:00</div><div class="c"><div class="ti"><span class="ic">🏨</span>안토 서울 체크인 ✓ <span class="tag">CHECK-IN</span></div><div class="de">114동 멤버스 라운지 · 객실 휴식 · 곧 수영장으로 출발 🏊</div></div></div>
+      <div class="tlc meal"><div class="time">18:00<small>저녁</small></div><div class="c"><div class="ti"><span class="ic">🍴</span>저녁 <span class="tag">DINNER</span></div><div class="de"><b>우디플레이트 뷔페</b>(리조트 내) 또는 <b>수유 대래함박</b>(차 12분, 함박·돈까스) 🍝</div></div></div>
+      <div class="tlc hero"><div class="time">19:30</div><div class="c"><div class="ti"><span class="ic">🏊‍♀️</span>실내 수영장 · 사우나 <span class="tag">FUN!</span></div><div class="de">북한산 전망 보며 신나는 물놀이 🌊✨</div></div></div>
+    </div>
+
+    <div class="hl">
+      <div class="h4">🛏️ 안토에서 알아둘 것</div>
+      <ul>
+        <li><span class="warn">⚠️ 공사 안내</span> — 리뉴얼로 <b>야외 라운드풀과 파크689는 6월 운영 중단</b>. 야외 물놀이 못해요 😢 (실내 수영장·사우나는 OK, 일부 소음)</li>
+        <li><b>실내 수영장 + 사우나</b> — 1박 1회, 외부 음식·개인 튜브 반입 불가, 체크인 전/체크아웃 후 이용 불가</li>
+        <li><b>루프탑 자쿠지</b>에서 북한산 전망 — 중단 목록엔 없음 (현장 확인)</li>
+        <li><b>키즈라운지</b> — 102동 G층, 어린이 15,000원 · 보호자 5,000원 / 2시간</li>
+        <li>안토 델리의 <b>북한산 포시즌 케이크</b> 🍰</li>
+      </ul>
+      <div class="note">체크인할 때 신분증 + 보증용 신용카드 필요! 주차는 객실 동별 전용(2-3대). 문의 02-553-5555 내선 1</div>
+    </div>
+
+    <div class="prac">
+      <div class="b"><div class="l">🅿️ 주차</div><div class="v">서울은 <b>종묘 공영주차장</b>(인사동·익선동·청계천 도보) · 안토는 동별 전용 주차</div></div>
+      <div class="b"><div class="l">🚇 교통</div><div class="v">3호선 <b>안국역</b>(인사동 5분) · 1·3·5호선 <b>종로3가역</b>(익선동 바로!)</div></div>
+    </div>
+
+    <div class="cta"><a target="_blank" href="https://www.google.com/maps/dir/G타워+송도/인사동+쌈지길/익선동+한옥마을/안토+서울">🗺️ Day 2 구글지도 동선<span class="arr">→</span></a></div>
+  </section>
+
+  <!-- ============ DAY 3 ============ -->
+  <section class="day d3">
+    <div class="day-hd">
+      <div class="chip">🌿 DAY THREE · 6월 10일 수요일</div>
+      <span class="big-emo">👘🪙</span>
+      <h2>한복 입고 경복궁<br>엽전 들고 통인시장</h2>
+      <div class="when">📍 강북 → 경복궁 → 서촌</div>
+      <div class="photo band">
+        <span class="washi l"></span><span class="washi r"></span>
+        <img class="photo-real" onerror="this.style.display='none'" alt="경복궁 한복" loading="lazy" referrerpolicy="no-referrer" src="https://english.visitseoul.net/comm/getImage?srvcId=POST&amp;parentSn=73&amp;fileTy=POSTTHUMB&amp;fileNo=6"><!-- ← 실제 사진을 넣으려면 이 src="" 안에 사진 주소를 붙여넣으세요 -->
+        <div class="photo-art"><svg viewBox="0 0 420 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="d3s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe0f2"/><stop offset="1" stop-color="#e8f4fb"/></linearGradient></defs><rect width="420" height="180" fill="url(#d3s)"/><circle cx="60" cy="38" r="16" fill="#fff" opacity=".8"/><ellipse cx="352" cy="32" rx="28" ry="13" fill="#fff" opacity=".85"/><path d="M0,90 L120,40 L240,90 Z" fill="#9bbf8f" opacity=".7"/><path d="M180,95 L300,45 L420,95 Z" fill="#8db58a" opacity=".7"/><rect x="0" y="120" width="420" height="60" fill="#e9ddc8"/><g transform="translate(120,46)"><rect x="-10" y="86" width="200" height="16" fill="#e3d4bb"/><rect x="10" y="60" width="160" height="28" fill="#e8b06a" stroke="#b07b3a" stroke-width="1.5"/><g fill="#9b6a3f"><rect x="18" y="60" width="7" height="28"/><rect x="64" y="60" width="7" height="28"/><rect x="110" y="60" width="7" height="28"/><rect x="156" y="60" width="7" height="28"/></g><rect x="-2" y="52" width="184" height="9" fill="#2f6f5e"/><g fill="#c0463f"><rect x="-2" y="52" width="16" height="9"/><rect x="168" y="52" width="16" height="9"/></g><g fill="#2d6f9e"><rect x="50" y="52" width="14" height="9"/><rect x="118" y="52" width="14" height="9"/></g><path d="M-26,54 Q-12,28 90,24 Q192,28 206,54 Q120,40 90,40 Q60,40 -26,54 Z" fill="#5e6470"/><rect x="56" y="22" width="68" height="6" fill="#cdbf9a"/><path d="M40,24 Q56,4 90,2 Q124,4 140,24 Q90,14 40,24 Z" fill="#6b7180"/></g><g transform="translate(150,128)"><circle cx="0" cy="0" r="7" fill="#ffd9b8"/><path d="M-8,8 L-11,30 L11,30 L8,8 Z" fill="#ff9eb2"/><path d="M-8,8 Q0,2 8,8 L6,16 Q0,12 -6,16 Z" fill="#fff0c2"/></g><g transform="translate(262,130)"><circle cx="0" cy="0" r="6.5" fill="#ffd9b8"/><path d="M-7,7 L-10,28 L10,28 L7,7 Z" fill="#88c8ee"/><path d="M-7,7 Q0,2 7,7 L5,14 Q0,10 -5,14 Z" fill="#fff"/></g></svg></div>
+        <div class="photo-cap">👘 경복궁 · 한복 입고 가족사진</div>
+      </div>
+      <div class="lead">마지막 날은 한 동네를 깊게! 안토의 아침은 <b>11시 체크아웃까지 꽉 채워</b> 즐기고 출발 ✨ <b>한복</b> 빌려 입고 경복궁의 근정전·향원정 천천히, <b>국립민속박물관 어린이박물관</b>에서 신나는 시간 🎈 영추문으로 빠져 도보 8분, <b>통인시장 엽전 도시락카페</b>에서 직접 도시락 만들기 🍱 마지막은 서촌 한옥 골목 산책!</div>
+    </div>
+
+    <div class="tl">
+      <div class="tlc meal"><div class="time">08:30<small>아침</small></div><div class="c"><div class="ti"><span class="ic">🍳</span>안토 조식 <span class="tag">BREAKFAST</span></div><div class="de">우디플레이트 — 북한산 뷰 다이닝, 여유 있게 ☕</div></div></div>
+      <div class="tlc"><div class="time">09:30</div><div class="c"><div class="ti"><span class="ic">🌲</span>안토 시설 마지막 즐기기</div><div class="de">북한산 전망 산책길 · 객실 휴식 · 안토 델리 <b>북한산 포시즌 케이크</b> 한 조각 🍰</div></div></div>
+      <div class="tlc"><div class="time">10:30</div><div class="c"><div class="ti"><span class="ic">🧳</span>짐 정리 · 차에 싣기</div></div></div>
+      <div class="tlc"><div class="time">11:00</div><div class="c"><div class="ti"><span class="ic">🚗</span>안토 체크아웃 · 광화문 출발</div><div class="de">광화문까지 약 40~50분</div></div></div>
+      <div class="tlc"><div class="time">11:45</div><div class="c"><div class="ti"><span class="ic">📍</span>광화문 도착</div></div></div>
+      <div class="tlc hero"><div class="time">12:00</div><div class="c"><div class="ti"><span class="ic">👘</span>한복 대여 <span class="tag">DRESS UP!</span></div><div class="de">광화문 인근 한복샵(사전예약 권장) — 한복 입으면 <span class="em">경복궁 무료입장</span> ✨</div></div></div>
+      <div class="tlc hero"><div class="time">12:30</div><div class="c"><div class="ti"><span class="ic">🏯</span>경복궁 입장</div><div class="de">근정전 → 경회루 → 향원정 순서로 한 바퀴 · 한복 + 가족사진 명소 📸</div></div></div>
+      <div class="tlc hero"><div class="time">13:15</div><div class="c"><div class="ti"><span class="ic">🎨</span>국립민속박물관 (경복궁 내) <span class="tag">KIDS!</span></div><div class="de"><b>무료 · 어린이박물관</b>의 인터랙티브 전시 — 가장 신나는 시간! 옆 국립고궁박물관도 무료</div></div></div>
+      <div class="tlc"><div class="time">13:45</div><div class="c"><div class="ti"><span class="ic">🚶</span>영추문으로 빠져 통인시장 도보</div><div class="de">경복궁 서문 영추문 → 통인시장 도보 약 8분(600m) · 서촌의 옛 골목 통과</div></div></div>
+      <div class="tlc hero meal"><div class="time">14:00<small>점심</small></div><div class="c"><div class="ti"><span class="ic">🪙</span>통인시장 엽전 도시락카페 <span class="tag">LUNCH + 체험</span></div><div class="de"><b>5,000원에 엽전 10개</b>를 받아서 시장 가게에서 반찬·간식 사 도시락 완성! 🍱 기름떡볶이·전·잡채가 인기 · <span class="em">평일 15시 마감 — 15시 전까지 받기!</span></div></div></div>
+      <div class="tlc hero"><div class="time">15:15</div><div class="c"><div class="ti"><span class="ic">🏘️</span>서촌 골목 산책</div><div class="de"><b>대오서점</b>(80년 헌책방·사진명소 📸) · <b>박노수미술관</b>(한옥 미술관, 어른 3,000원) · <b>이상의 집</b>(시인 이상의 옛 집터) · 한옥 카페에서 차 한 잔 ☕</div></div></div>
+      <div class="tlc"><div class="time">16:30</div><div class="c"><div class="ti"><span class="ic">🏠</span>수원 호매실 귀가 <span class="tag">HOME!</span></div><div class="de">약 1시간 · 퇴근시간과 겹쳐 막힐 수 있어 카카오내비 켜기</div></div></div>
+    </div>
+
+    <div class="hl">
+      <div class="h4">🌸 경복궁·서촌에서 꼭</div>
+      <ul>
+        <li><b>한복 대여</b>(1~2만원대)로 경복궁 무료입장 — 광화문 인근 샵 사전예약 권장 👘</li>
+        <li><b>국립민속박물관 어린이박물관</b> — 무료, 인터랙티브 전시 🎨 강추!</li>
+        <li><b>통인 도시락카페</b> — 평일 15시 마감, 14시까지 도착이 안전 ⏰</li>
+        <li>서촌은 골목 자체가 매력 — 한옥 카페에서 한 박자 쉬기 ☕</li>
+      </ul>
+      <div class="note">경복궁 수문장 교대식은 1일 2회(10시·14시)인데 그 시간엔 우리 일정과 안 맞아요. 대신 한복 + 어린이박물관 + 도시락 체험이 더 신나요!</div>
+    </div>
+
+    <div class="prac">
+      <div class="b"><div class="l">🅿️ 주차</div><div class="v"><b>광화문시민열린마당 공영주차장</b>(경복궁 도보 5분) · 통인시장까지 도보권</div></div>
+      <div class="b"><div class="l">🚇 교통</div><div class="v">3호선 <b>경복궁역</b>(2번 출구 광화문) · 통인시장 도보 8분</div></div>
+    </div>
+
+    <div class="cta"><a target="_blank" href="https://www.google.com/maps/dir/안토+서울/경복궁/통인시장/수원+호매실동">🗺️ Day 3 구글지도 동선<span class="arr">→</span></a></div>
+  </section>
+
+  <!-- ============ STAY ============ -->
+  <section class="stays">
+    <div class="sec-h">
+      <span class="cave">Sweet dreams 💤</span>
+      <h2><span class="emo">🛏️</span>오늘 밤은 어디서?</h2>
+    </div>
+
+    <div class="stay-c s1">
+      <div class="top">
+        <div class="emo">🏯</div>
+        <div class="name">
+          <div class="tg">STAY 01 · 송도</div>
+          <h3>경원재 by 워커힐</h3>
+          <div class="lux-row">
+            <span class="lux-badge"><span class="st">★★★★★</span> 국내 유일 5성급 한옥호텔</span>
+            <span class="lux-op">🏨 WALKERHILL 브랜드</span>
+          </div>
+          <div class="sub">도심형 전통 한옥호텔 · 6월 8일(월) 1박</div>
+        </div>
+      </div>
+      <div class="photo tall">
+        <span class="washi l"></span><span class="washi r"></span>
+        <img class="photo-real" onerror="this.style.display='none'" alt="경원재 바이 워커힐 한옥 객실" loading="lazy" referrerpolicy="no-referrer" src="https://www.gwjbywalkerhill.com/GyeongwonjaeByWalkerhill_common/images/homepage/index/room_img07.jpg"><!-- ← 실제 사진을 넣으려면 이 src="" 안에 사진 주소를 붙여넣으세요 -->
+        <div class="photo-art"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9d4"/><stop offset=".55" stop-color="#fff3e6"/><stop offset="1" stop-color="#fdf0e0"/></linearGradient></defs><rect width="400" height="300" fill="url(#gws)"/><circle cx="330" cy="60" r="30" fill="#ffd9a8" opacity=".55"/><circle cx="330" cy="60" r="18" fill="#ffe6c2"/><g fill="#f3d9c4" opacity=".75"><rect x="18" y="50" width="16" height="100"/><rect x="38" y="78" width="11" height="72"/><rect x="296" y="56" width="14" height="94"/><rect x="314" y="86" width="10" height="64"/><rect x="356" y="68" width="15" height="82"/></g><rect x="0" y="186" width="400" height="114" fill="#bfe3cf"/><rect x="0" y="186" width="400" height="16" fill="#a9d8bd"/><ellipse cx="200" cy="270" rx="165" ry="24" fill="#bfe0ef"/><g transform="translate(50,186)"><rect x="-3" y="-2" width="6" height="24" fill="#8a5a36"/><ellipse cx="0" cy="-16" rx="24" ry="13" fill="#7dba8f"/><ellipse cx="0" cy="-30" rx="17" ry="11" fill="#8ec79f"/></g><g transform="translate(110,96)"><rect x="0" y="50" width="180" height="44" fill="#f6ead4" stroke="#caa978" stroke-width="1.6"/><g fill="#9b6a3f"><rect x="8" y="50" width="7" height="44"/><rect x="58" y="50" width="7" height="44"/><rect x="116" y="50" width="7" height="44"/><rect x="166" y="50" width="7" height="44"/></g><g fill="#fff8ec" stroke="#caa978" stroke-width="1"><rect x="20" y="58" width="34" height="30"/><rect x="74" y="58" width="34" height="30"/><rect x="128" y="58" width="34" height="30"/></g><g stroke="#e3cda3" stroke-width=".8"><line x1="37" y1="58" x2="37" y2="88"/><line x1="91" y1="58" x2="91" y2="88"/><line x1="145" y1="58" x2="145" y2="88"/><line x1="20" y1="73" x2="54" y2="73"/><line x1="74" y1="73" x2="108" y2="73"/><line x1="128" y1="73" x2="162" y2="73"/></g><rect x="-7" y="40" width="194" height="11" fill="#4a7a6a"/><g fill="#c0463f"><rect x="-7" y="40" width="16" height="11"/><rect x="178" y="40" width="16" height="11"/></g><g fill="#2d6f9e"><rect x="44" y="40" width="16" height="11"/><rect x="126" y="40" width="16" height="11"/></g><path d="M-26,42 Q-14,8 90,3 Q194,8 206,42 Q168,24 90,22 Q12,24 -26,42 Z" fill="#6b6f7a"/><path d="M-26,42 Q90,28 206,42 L206,49 Q90,35 -26,49 Z" fill="#565a64"/><g stroke="#7e828c" stroke-width="1"><line x1="44" y1="28" x2="44" y2="42"/><line x1="90" y1="24" x2="90" y2="40"/><line x1="136" y1="28" x2="136" y2="42"/></g></g><g transform="translate(322,186)" fill="#cdbfae"><rect x="-7" y="-5" width="14" height="7"/><rect x="-10" y="-16" width="20" height="11" rx="2"/><rect x="-6" y="-25" width="12" height="9"/><path d="M-12,-25 L0,-34 L12,-25 Z"/></g><g fill="#ff9eb2" opacity=".85"><circle cx="64" cy="150" r="2.6"/><circle cx="352" cy="140" r="2.2"/><circle cx="276" cy="86" r="2.2"/></g></svg></div>
+        <div class="photo-cap">🏯 경원재 바이 워커힐 · 한옥 객실</div>
+      </div>
+      <div class="lead"><b>국내에서 5성 등급을 받은 단 하나의 한옥호텔</b> 🌸 송도 센트럴파크 한가운데, 객실 자체가 진짜 한옥이라 잠자리부터 격이 달라요. 2025년부터 <b>워커힐</b>이 브랜드와 서비스 기준을 관리하는 '도심형 전통 한옥호텔'이에요. 스위트 14실 포함 단 30개 객실로 운영해 한적하고 프라이빗해요.</div>
+      <div class="feat">
+        <div class="f hero-f"><b>🪵 명장이 지은 한옥</b><br>유네스코 인류무형유산 최기영 대목장 등 대한민국 명장이 참여 · 2024 한국건축문화대상 본상</div>
+        <div class="f"><b>🛁 편백나무 욕조</b><br>일부 객실 건식사우나</div>
+        <div class="f"><b>🎲 전통놀이함</b><br>객실 비치 윷놀이</div>
+        <div class="f"><b>👘 한복 대여</b><br>유료 · 가족사진 명소</div>
+        <div class="f"><b>🍚 한식 반상 조식</b><br>'Dining 송' 정갈한 한 상</div>
+        <div class="f"><b>💨 전 객실 다이슨</b><br>드라이어 비치</div>
+        <div class="f"><b>🅿️ 무료 주차</b><br>전 객실 금연</div>
+      </div>
+    </div>
+
+    <div class="stay-c s2">
+      <div class="top">
+        <div class="emo">🏞️</div>
+        <div class="name">
+          <div class="tg">STAY 02 · 강북</div>
+          <h3>안토 서울</h3>
+          <div class="lux-row">
+            <span class="lux-badge green">⛰️ 한화 하이엔드 리조트</span>
+            <span class="lux-op green">🌲 북한산국립공원 품은 도심 속 자연</span>
+          </div>
+          <div class="sub">Where luxury meets tranquility · 6월 9일(화) 1박</div>
+        </div>
+      </div>
+      <div class="photo tall">
+        <span class="washi l"></span><span class="washi r"></span>
+        <img class="photo-real" onerror="this.style.display='none'" alt="안토 서울 북한산 수영장" loading="lazy" referrerpolicy="no-referrer" src="https://yaimg.yanolja.com/v5/2026/02/27/03/1280/69a10b32bcd1a7.49317426.jpg"><!-- ← 실제 사진을 넣으려면 이 src="" 안에 사진 주소를 붙여넣으세요 -->
+        <div class="photo-art"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="s2s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfeafb"/><stop offset="1" stop-color="#eaf6fc"/></linearGradient><linearGradient id="s2p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fc6e6"/><stop offset="1" stop-color="#4fa8d4"/></linearGradient></defs><rect width="400" height="300" fill="url(#s2s)"/><circle cx="320" cy="56" r="22" fill="#fff6d6"/><path d="M0,150 L60,90 L100,120 L150,70 L210,130 L270,80 L330,120 L400,80 L400,170 L0,170 Z" fill="#bcae9a"/><path d="M0,160 L70,120 L120,150 L190,100 L260,155 L330,115 L400,150 L400,180 L0,180 Z" fill="#a89a84"/><g fill="#cfc6b4" opacity=".6"><path d="M150,70 L162,96 L138,96 Z"/><path d="M270,80 L282,104 L258,104 Z"/></g><rect x="0" y="160" width="400" height="24" fill="#8bbf9a"/><g transform="translate(40,120)"><rect x="0" y="0" width="120" height="60" fill="#f0ece6" stroke="#cbbfae" stroke-width="1.5"/><g fill="#bfe0ef"><rect x="10" y="10" width="18" height="14"/><rect x="36" y="10" width="18" height="14"/><rect x="62" y="10" width="18" height="14"/><rect x="88" y="10" width="18" height="14"/><rect x="10" y="34" width="18" height="14"/><rect x="36" y="34" width="18" height="14"/><rect x="62" y="34" width="18" height="14"/><rect x="88" y="34" width="18" height="14"/></g></g><rect x="0" y="184" width="400" height="116" fill="#f1ece4"/><rect x="40" y="206" width="320" height="80" rx="14" fill="url(#s2p)"/><g stroke="#bfe6f4" stroke-width="3" opacity=".7" fill="none"><path d="M60,224 Q90,218 120,224 T180,224 T240,224 T300,224 T340,224"/><path d="M60,248 Q90,242 120,248 T180,248 T240,248 T300,248 T340,248"/><path d="M60,270 Q90,264 120,270 T180,270 T240,270 T300,270 T340,270"/></g><g transform="translate(120,236)"><circle r="16" fill="#ffd84d"/><circle r="7" fill="url(#s2p)"/></g><g transform="translate(308,292)" fill="#ff9eb2"><rect x="-32" y="-6" width="50" height="6" rx="3"/><rect x="-30" y="-20" width="16" height="16" rx="3" transform="rotate(-28 -22 -12)"/></g></svg></div>
+        <div class="photo-cap">🏞️ 안토 서울 · 북한산 품은 하이엔드 리조트</div>
+      </div>
+      <div class="lead"><b>옛 파라스파라 서울을 한화호텔앤드리조트가 인수해 2025년 재탄생</b>한 하이엔드 리조트 ⛰️ 2만 3천 평 대자연에 안긴, 강남에서 40분·서울 어디서든 1시간 거리의 도심 속 자연 휴식처예요. 객실 온돌, 실내 수영장과 사우나, 키즈라운지까지 — 마지막 밤 푹 쉬기 딱 좋아요.</div>
+      <div class="feat">
+        <div class="f hero-f"><b>🌲 거의 모든 객실이 북한산·도봉산 통창 뷰</b><br>국립공원 한가운데, 천연 소재 우드톤 인테리어로 휴양림에 온 듯한 객실</div>
+        <div class="f"><b>🏊 실내 수영장 + 사우나</b><br>1박 1회 · 튜브 반입 불가</div>
+        <div class="f"><b>♨️ 루프탑 자쿠지</b><br>북한산 파노라마 전망</div>
+        <div class="f"><b>🎈 키즈라운지</b><br>어린이 15,000원/2h</div>
+        <div class="f"><b>🍰 안토 델리</b><br>북한산 포시즌 케이크</div>
+        <div class="f"><b>🥗 우디플레이트</b><br>북한산 뷰 올데이 다이닝</div>
+        <div class="f"><b>🛏️ 객실 온돌</b><br>편안한 잠자리</div>
+      </div>
+      <div class="warn-box">
+        <div class="wt">⚠️ 6월 방문 시 주의!</div>
+        리뉴얼 공사로 <b>야외 라운드풀·파크689는 4월~7월 셋째 주 운영 중단</b>(우리 날짜 해당). 야외 물놀이는 못하고 <b>실내 수영장·사우나는 가능</b>한데 일부 소음 있을 수 있어요. 체크인 시 신분증 + 보증용 신용카드 필요해요!
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIPS ============ -->
+  <section class="tips">
+    <div class="sec-h">
+      <span class="cave">Don't forget!</span>
+      <h2><span class="emo">📝</span>여행 꿀팁 체크리스트</h2>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip">
+        <h3>🗓️ 휴무·운영 (방문일 OK!)</h3>
+        <ul>
+          <li><b>G타워</b> 월 휴무 → 화요일 조식 후 10시 개관에 맞춰 방문</li>
+          <li><b>경복궁</b> 화 휴무 → 수요일 방문 OK</li>
+          <li><b>통인 도시락카페</b> 화 휴무, 평일 15시 마감 → 수요일 OK</li>
+          <li><b>박노수미술관</b> 월 휴관 → 수요일 OK</li>
+          <li><span class="warn">⚠️ 안토 야외풀·파크689 6월 운영 중단</span></li>
+        </ul>
+      </div>
+
+      <div class="tip">
+        <h3>📞 예약·준비물</h3>
+        <ul>
+          <li>Day1 <b>JAZZ257·몰트하우스(창가)</b> 예약</li>
+          <li>Day2 <b>SotNaeEum 인사동</b>은 웨이팅 있음</li>
+          <li>Day3 <b>한복샵</b> 광화문 인근 사전예약 추천</li>
+          <li><b>안토 체크인</b> 신분증 + 보증용 신용카드 필수!</li>
+          <li>6월 초여름 ☀️ 모자·자외선·생수, 경복궁은 그늘이 적어요</li>
+          <li>아이 등교/체험학습 처리 확인 📋</li>
+        </ul>
+      </div>
+
+      <div class="tip">
+        <h3>🚗 교통 꿀팁</h3>
+        <ul>
+          <li>Day2 서울 — <b>종묘 공영주차장</b>에 거점, 인사동·익선동·청계천 도보 묶기</li>
+          <li>Day3 서울 — <b>광화문 공영주차장</b>에 거점, 경복궁·통인 도보 (한 동네 끝!)</li>
+          <li>광화문 공영은 평일에도 만차 잦음 — 11시 전 도착 권장</li>
+          <li>대중교통은 <b>T머니</b> 또는 <b>기후동행카드</b>(서울 무제한)</li>
+          <li>택시는 <b>카카오T</b> 호출 (관광지 호객 주의)</li>
+        </ul>
+      </div>
+
+      <div class="tip">
+        <h3>🎒 아이와 좋은 포인트</h3>
+        <ul>
+          <li>Day1 <b>달빛 문보트</b> + 한옥마을 야경 산책</li>
+          <li>Day2 <b>인사동 만들기 체험</b>(한지·팔찌)</li>
+          <li>Day2 <b>안토 실내 수영장</b>으로 신나게!</li>
+          <li>Day3 <b>한복 + 어린이박물관</b> 인터랙티브 전시</li>
+          <li>Day3 <b>엽전 도시락 만들기</b> — 직접 사고 직접 담아요!</li>
+        </ul>
+      </div>
+
+      <div class="tip full">
+        <h3>🅿️ 서울 거점 주차장 (탭하면 구글지도)</h3>
+        <div class="park-row">
+          <a target="_blank" href="https://maps.google.com/?cid=899694343133737062"><span class="pl">Day 2 거점</span><span class="pn">종묘 공영주차장</span></a>
+          <a target="_blank" href="https://maps.google.com/?cid=6048652557233443659"><span class="pl">Day 3 거점</span><span class="pn">광화문시민열린마당</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="big">🌸 즐거운 가족 여행 <span class="em">되세요!</span> 🌸</div>
+    <div style="font-family:'Gaegu';font-size:16px;color:var(--ink2);margin-top:6px">3일의 추억이 평생의 보물이 되기를 ✨</div>
+    <div class="sig">— 해피하린 <span class="heart">💝</span> 가족여행 카탈로그 —</div>
+    <div class="small">영업시간 · 요금 · 휴무 · 시설 운영은 변동될 수 있어요<br>방문 전 한 번 더 확인해주세요 🙏</div>
+  </footer>
+
+</div>
+</body>
+</html>
